@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GenDomainXML;
+using System.ComponentModel.DataAnnotations;
 using System.Xml;
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
 
 string _path = "C:\\Users\\AutomiqUsr\\Documents\\GenDomainXml_v3\\ADS";
 string _filename = "test.omx";
+bool local = true;
+
 XmlDocument xmlDoc = new XmlDocument();
 string tmp = "";
 tmp = Path.Combine(_path, _filename);
@@ -16,11 +17,25 @@ if (!fileInfo.Exists)
 
 xmlDoc.Load(tmp);
 XmlElement xROOT = xmlDoc.DocumentElement;
-foreach (XmlElement xnode in xROOT)
+
+Console.WriteLine("1. Для локального применения конфигурации");
+Console.WriteLine("2. Для удаленного применения конфигурации");
+switch (DataFunc.select_value(2, 2))
+{
+    case 2: 
+        local = false;
+        break;
+    case -1:
+        return;
+}
+
+
+Console.WriteLine( DataFunc.dataToScrean("Выберите домен Alpha.Domain:",xROOT));
+
+/*foreach (XmlElement xnode in xROOT)
 { 
-    //Console.WriteLine(xnode.Name);
     if (xnode.Name == "dp:domain")
     {
-        Console.WriteLine(xnode.GetAttribute("name"));
+        Console.WriteLine(xnode.GetType());
     }
-}
+}*/
