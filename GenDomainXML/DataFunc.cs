@@ -36,7 +36,7 @@ namespace GenDomainXML
             }
             return -1;
         }
-        public static int SelectElement(string _message, XmlElement _dataIn, string _NameOfChildXML) // функция отображает данные из XML и просит выбоать один из них
+        public static string SelectElement(string _message, XmlElement _dataIn, string _NameOfChildXML) // функция отображает данные из XML и просит выбоать один из них
         {
             Console.WriteLine(_message);
             int countOfNum = 0;
@@ -48,7 +48,22 @@ namespace GenDomainXML
                     Console.WriteLine($"{countOfNum.ToString()}.{_dataInChild.GetAttribute("name")}");
                 }
             }
-            return select_value(countOfNum, 2)-1; // -1 чтобы "подогнать" выбор к id xml
+            int tmp = select_value(countOfNum, 2)-1; //колхоз
+            int tmp2 = 0;
+            Console.WriteLine("tmp="+tmp);
+            foreach (XmlElement _dataInChild in _dataIn)
+            {
+                if (_dataInChild.Name == _NameOfChildXML && tmp2 == tmp)
+                {
+                    return _dataInChild.GetAttribute("name");
+                    break;
+                }
+                else if (_dataInChild.Name == _NameOfChildXML)
+                {
+                    tmp2++;
+                }
+            }
+            return "";
         }
 
         public static string GetNameById(string _message, XmlElement _dataIn, string _NameOfChildXML) // функция отображает данные из XML и просит выбоать один из них

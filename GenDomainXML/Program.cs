@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Xml;
 
-string _path = "C:\\Users\\AutomiqUsr\\Documents\\GenDomainXml_v3\\ADS";
+string _path = "C:\\Users\\admin\\Documents\\GenDomainXml_v3\\ADS";
 string _filename = "test.omx";
 bool local = true;
 int AlphaDomain = 0;
