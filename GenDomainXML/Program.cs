@@ -39,12 +39,13 @@ if (local)
 
     //DataFunc.dataToScrean("Выберите домен Alpha.Domain:", xROOT[DataFunc.dataToScrean("Выберите домен Alpha.Domain:", xROOT, "dp:domain")],""]);
     int firstlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
-    Console.WriteLine("firstlevel="+ firstlevel);
+    int secondlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain.node:", xROOT.ChildNodes[firstlevel], "dp:domain-node");
+    //Console.WriteLine("firstlevel="+ firstlevel);
 
 
 
     //foreach (XmlElement xnode in xROOT.ChildNodes[3])
-    /*foreach (XmlElement xnode in xROOT.GetElementsByTagName("dp:domain"))
+    /*foreach (XmlElement xnode in xROOT.ChildNodes[firstlevel])
     {
         Console.WriteLine(xnode.GetAttribute("name"));
     }*/
