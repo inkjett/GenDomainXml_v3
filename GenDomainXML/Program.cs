@@ -2,7 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.Xml;
 
-string _path = "C:\\Users\\admin\\Documents\\GenDomainXml_v3\\ADS";
+//string _path = "C:\\Users\\admin\\Documents\\GenDomainXml_v3\\ADS";
+string _path = "C:\\Users\\AutomiqUsr\\Documents\\GenDomainXml_v3\\ADS";
 string _filename = "test.omx";
 bool local = true;
 int AlphaDomain = 0;
@@ -33,18 +34,20 @@ switch (DataFunc.select_value(2, 2))
 
 if (local)
 {
+    //Console.WriteLine(xROOT.ChildNodes.Count); // получить количество элементов
+    //Console.WriteLine(xROOT.GetElementsByTagName("dp:domain").Count); //количество по названию чаелда
+
     //DataFunc.dataToScrean("Выберите домен Alpha.Domain:", xROOT[DataFunc.dataToScrean("Выберите домен Alpha.Domain:", xROOT, "dp:domain")],""]);
-    DataFunc.SelectElement("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
+    int firstlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
+    Console.WriteLine("firstlevel="+ firstlevel);
+
+
+
+    //foreach (XmlElement xnode in xROOT.ChildNodes[3])
+    /*foreach (XmlElement xnode in xROOT.GetElementsByTagName("dp:domain"))
+    {
+        Console.WriteLine(xnode.GetAttribute("name"));
+    }*/
+
 } 
 
-
-foreach (XmlElement xnode in xROOT)
-{ 
-
-
-
-    /*if (xnode.Name == "dp:domain")
-    {
-        Console.WriteLine(xnode.GetType());
-    }*/
-}

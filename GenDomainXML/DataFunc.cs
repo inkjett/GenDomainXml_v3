@@ -36,34 +36,32 @@ namespace GenDomainXML
             }
             return -1;
         }
-        public static string SelectElement(string _message, XmlElement _dataIn, string _NameOfChildXML) // функция отображает данные из XML и просит выбоать один из них
+        public static int SelectElement(string _message, XmlElement _dataIn, string _NameOfChildXML) // функция отображает данные из XML и просит выбоать один из них
         {
             Console.WriteLine(_message);
+            string tmpStr = "";            
             int countOfNum = 0;
-            foreach (XmlElement _dataInChild in _dataIn)
+            int choise = 0;
+            foreach (XmlElement _dataInChild in _dataIn.GetElementsByTagName(_NameOfChildXML)) // заполняем список для выбора 
             {
-                if (_dataInChild.Name == _NameOfChildXML)
-                {
-                    countOfNum++;
-                    Console.WriteLine($"{countOfNum.ToString()}.{_dataInChild.GetAttribute("name")}");
-                }
+                countOfNum++;
+                Console.WriteLine($"{countOfNum.ToString()}.{_dataInChild.GetAttribute("name")}");
+                tmpStr += _dataInChild.GetAttribute("name") + ";" ;
             }
-            int tmp = select_value(countOfNum, 2)-1; //колхоз
-            int tmp2 = 0;
-            Console.WriteLine("tmp="+tmp);
-            foreach (XmlElement _dataInChild in _dataIn)
+            //tmpStr.Split(";")[select_value(countOfNum, 2) - 1]);
+            choise = select_value(countOfNum, 2) - 1;
+            int tmp = 0;
+            int tmp2 = 0;            
+            foreach (XmlElement _dataInChild in _dataIn) // ищим название элемента 
             {
-                if (_dataInChild.Name == _NameOfChildXML && tmp2 == tmp)
+                if (_dataInChild.GetAttribute("name") == tmpStr.Split(";")[choise])
                 {
-                    return _dataInChild.GetAttribute("name");
+                    return tmp2;
                     break;
                 }
-                else if (_dataInChild.Name == _NameOfChildXML)
-                {
-                    tmp2++;
-                }
+                tmp2++;
             }
-            return "";
+            return tmp2;
         }
 
         public static string GetNameById(string _message, XmlElement _dataIn, string _NameOfChildXML) // функция отображает данные из XML и просит выбоать один из них
