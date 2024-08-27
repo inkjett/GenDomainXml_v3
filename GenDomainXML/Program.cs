@@ -34,8 +34,9 @@ switch (DataFunc.select_value(2, 2))
 
 if (local)
 {
-    int firstlevel= DataFunc.SelectElement("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
-    int secondlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain.node:", xROOT.ChildNodes[firstlevel], "dp:domain-node");
+    //int firstlevel= DataFunc.SelectElement("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
+    //int secondlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain.node:", xROOT.ChildNodes[firstlevel], "dp:domain-node");
+    XMLFunc.genLocalNetXML();
 
 
 

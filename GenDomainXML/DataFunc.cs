@@ -65,12 +65,6 @@ namespace GenDomainXML
             }
             return tmp2;
         }
-
-
-
-
-
-
     }
 }
 
