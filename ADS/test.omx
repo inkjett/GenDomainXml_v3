@@ -29,7 +29,7 @@
     </dp:domain-node>
   </dp:domain>
   <dp:domain name="Domain1" address="local" uuid="505e4b52-f676-449d-b6dc-c026d901849d">
-    <dp:domain-node name="host" uuid="59fbf0ae-2893-414e-b961-512e606b8ae6">
+    <dp:domain-node name="host3" uuid="59fbf0ae-2893-414e-b961-512e606b8ae6">
       <eth:ethernet-adapter name="EthernetAdapter" address="127.0.0.1" network="Ethernet" uuid="3ecf585c-77f0-41b0-8de2-16771b74350a" />
       <srv:io-server name="Server" uuid="ed0d451a-78a6-4d62-b6a4-568d9fcdaf89">
         <srv:opcda-server name="DaServer" uuid="10cd6024-bc84-4100-b3fb-d6ab11d95516" />
@@ -41,7 +41,7 @@
       </srv:io-server>
     </dp:domain-node>
     <eth:ethernet-net name="Ethernet" uuid="0031f6bd-3582-4ac5-baa0-29c5df456995" />
-    <dp:domain-node name="host1" uuid="9889833e-2062-4ff8-903c-8539bdbc4607">
+    <dp:domain-node name="host2" uuid="9889833e-2062-4ff8-903c-8539bdbc4607">
       <eth:ethernet-adapter name="EthernetAdapter" address="127.0.0.1" network="Ethernet" uuid="f9ba9ae8-3a84-49ed-a989-8183950066b6" />
     </dp:domain-node>
   </dp:domain>

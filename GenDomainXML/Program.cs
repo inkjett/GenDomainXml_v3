@@ -34,21 +34,7 @@ switch (DataFunc.select_value(2, 2))
 
 if (local)
 {
-    //Console.WriteLine(xROOT.ChildNodes.Count); // получить количество элементов
-    //Console.WriteLine(xROOT.GetElementsByTagName("dp:domain").Count); //количество по названию чаелда
-
-    //DataFunc.dataToScrean("Выберите домен Alpha.Domain:", xROOT[DataFunc.dataToScrean("Выберите домен Alpha.Domain:", xROOT, "dp:domain")],""]);
-    int firstlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
-    int secondlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain.node:", xROOT.ChildNodes[firstlevel], "dp:domain-node");
-    //Console.WriteLine("firstlevel="+ firstlevel);
-
-
-
-    //foreach (XmlElement xnode in xROOT.ChildNodes[3])
-    /*foreach (XmlElement xnode in xROOT.ChildNodes[firstlevel])
-    {
-        Console.WriteLine(xnode.GetAttribute("name"));
-    }*/
-
-} 
+    int firstlevel= DataFunc.SelectElement1("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
+    int secondlevel = DataFunc.SelectElement1("Выберите домен Alpha.Domain.node:", xROOT.ChildNodes[firstlevel], "dp:domain-node");
+}
 

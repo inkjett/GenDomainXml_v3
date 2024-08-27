@@ -36,32 +36,27 @@ namespace GenDomainXML
             }
             return -1;
         }
-        public static int SelectElement(string _message, XmlNode _dataIn, string _NameOfChildXML) // функция отображает данные из XML и просит выбоать один из них
+        public static int SelectElement(string _message, XmlElement _dataIn, string _NameOfChildXML) 
         {
             Console.WriteLine(_message);
             string tmpStr = "";            
             int countOfNum = 0;
             int choise = 0;
-            /*foreach (XmlElement _dataInChild in _dataIn.GetElementsByTagName(_NameOfChildXML)) // заполняем список для выбора 
-            {
-                countOfNum++;
-                Console.WriteLine($"{countOfNum.ToString()}.{_dataInChild.GetAttribute("name")}");
-                tmpStr += _dataInChild.GetAttribute("name") + ";" ;
-            }*/
-            foreach (XmlElement _dataInChild in _dataIn)
+            foreach (XmlElement _dataInChild in _dataIn) //подстановка цифр в выбор
             {
                 if (_dataInChild.Name == _NameOfChildXML)
                 {
                     countOfNum++;
                     Console.WriteLine($"{countOfNum.ToString()}.{_dataInChild.GetAttribute("name")}");
+                    tmpStr += _dataInChild.GetAttribute("name") + ";";
                 }
             }
-            //tmpStr.Split(";")[select_value(countOfNum, 2) - 1]);
             choise = select_value(countOfNum, 2) - 1;
+            Console.WriteLine(choise);
             int tmp = 0;
             int tmp2 = 0;            
-            foreach (XmlElement _dataInChild in _dataIn) // ищим название элемента 
-            {
+            foreach (XmlElement _dataInChild in _dataIn) // ищим название элемента и ищем ее порядковый номер
+            {                
                 if (_dataInChild.GetAttribute("name") == tmpStr.Split(";")[choise])
                 {
                     return tmp2;
@@ -72,22 +67,35 @@ namespace GenDomainXML
             return tmp2;
         }
 
-        public static string GetNameById(string _message, XmlElement _dataIn, string _NameOfChildXML) // функция отображает данные из XML и просит выбоать один из них
+        public static int SelectElement1(string _message, XmlNode _dataIn, string _NameOfChildXML)  // функция отображает данные из XML и просит выбоать один из них
         {
-            /* Console.WriteLine(_message);
-             int countOfNum = 0;
-             foreach (XmlElement _dataInChild in _dataIn)
-             {
-                 if (_dataInChild.Name == _NameOfChildXML)
-                 {
-                     countOfNum++;
-                     Console.WriteLine($"{countOfNum.ToString()}.{_dataInChild.GetAttribute("name")}");
-                 }
-             }
-             return select_value(countOfNum, 2) - 1; // -1 чтобы "подогнать" выбор к id xml*/
-            return "";
+            Console.WriteLine(_message);
+            string tmpStr = "";
+            int countOfNum = 0;
+            int choise = 0;
+            foreach (XmlElement _dataInChild in _dataIn) //подстановка цифр в выбор
+            {
+                if (_dataInChild.Name == _NameOfChildXML)
+                {
+                    countOfNum++;
+                    Console.WriteLine($"{countOfNum.ToString()}.{_dataInChild.GetAttribute("name")}");
+                    tmpStr += _dataInChild.GetAttribute("name") + ";";
+                }
+            }
+            choise = select_value(countOfNum, 2) - 1;
+            int tmp = 0;
+            int tmp2 = 0;
+            foreach (XmlElement _dataInChild in _dataIn) // ищим название элемента и ищем ее порядковый номер
+            {
+                if (_dataInChild.GetAttribute("name") == tmpStr.Split(";")[choise])
+                {
+                    return tmp2;
+                    break;
+                }
+                tmp2++;
+            }
+            return tmp2;
         }
-
 
 
 
