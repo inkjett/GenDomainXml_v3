@@ -2,8 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.Xml;
 
-//string _path = "C:\\Users\\admin\\Documents\\GenDomainXml_v3\\ADS";
-string _path = "C:\\Users\\AutomiqUsr\\Documents\\GenDomainXml_v3\\ADS";
+string _path = "C:\\Users\\admin\\Documents\\GenDomainXml_v3\\ADS";
+//string _path = "C:\\Users\\AutomiqUsr\\Documents\\GenDomainXml_v3\\ADS";
 string _filename = "test.omx";
 bool local = true;
 int AlphaDomain = 0;
@@ -36,7 +36,8 @@ if (local)
 {
     //int firstlevel= DataFunc.SelectElement("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
     //int secondlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain.node:", xROOT.ChildNodes[firstlevel], "dp:domain-node");
-    XMLFunc.genLocalNetXML();
+    //XMLFunc.genLocalNetXML(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].Attributes.GetNamedItem("name").Value); // генерация 
+    //XMLFunc.genDomainXMl();
 
 
 
