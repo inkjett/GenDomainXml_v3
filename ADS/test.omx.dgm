@@ -33,4 +33,8 @@
     <ethernet-adapter Id="1b3ca7bb-dca8-4591-b43d-531cab2bd0e9" Left="1152.00666666667" Top="279.520687599182" Width="137.993333333333" Height="45.63" />
     <io-server Id="a61211ec-c4af-4c68-8cfd-3f93353e535d" Left="277" Top="309" Width="150" Height="150" />
   </domain-node>
+  <domain-node Id="f3033fbe-2104-4cf2-9c51-896b64739758" OffsetX="0" OffsetY="0" Scale="1" SnapToGrid="false">
+    <ethernet-adapter Id="49a20631-ccc7-4481-beac-876a1fd79b03" Left="10" Top="280.020687599182" Width="137.993333333333" Height="55.63" />
+    <io-server Id="7dcd3ea1-9df0-4fd0-97e9-e9b7d1781703" Left="30" Top="30" Width="94.7133333333333" Height="152" />
+  </domain-node>
 </Diagrams>
