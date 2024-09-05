@@ -38,6 +38,7 @@ if (local)
     //int secondlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain.node:", xROOT.ChildNodes[firstlevel], "dp:domain-node");
     //XMLFunc.genLocalNetXML(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].Attributes.GetNamedItem("name").Value); // генерация 
     //XMLFunc.genDomainXMl();
+    XMLFunc.genLocalNetXML2();
 
 
 

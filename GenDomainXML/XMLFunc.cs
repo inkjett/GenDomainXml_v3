@@ -2,13 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace GenDomainXML
 {
+    public class NetEnterPortElement
+    {
+        [XmlAnyAttribute]
+        public string Value { get; set; }
+    }
+
+    public class SomeModel
+    {
+        [XmlElement("NetEnterPort")]
+        public NetEnterPortElement parametrString { get; set; }    
+    }
+
+
+
+
     internal class XMLFunc
     {
         public static void genLocalNetXML(string _localName) //XmlNode _dataIn
@@ -91,10 +108,16 @@ namespace GenDomainXML
             xmlDoc.AppendChild(root);
 
             xmlDoc.Save("domain.xml");
+        }
 
-
-
-
+        public static void genLocalNetXML2()
+        {
+            var model = new SomeModel
+            {
+                parametrString = new NetEnterPortElement { Value = "local" }
+            };
+            var serializer = new XmlSerializer(model.GetType());
+            serializer.Serialize(Console.Out, model);
         }
     }
 }
