@@ -11,26 +11,12 @@ using System.Xml.Serialization;
 
 namespace GenDomainXML
 {
-    public class NetEnterPortElement
-    {
-        [XmlAnyAttribute]
-        public string Value { get; set; }
-    }
-
-    public class SomeModel
-    {
-        [XmlElement("NetEnterPort")]
-        public NetEnterPortElement parametrString { get; set; }    
-    }
-
-
-
-
     internal class XMLFunc
     {
         public static void genLocalNetXML(string _localName) //XmlNode _dataIn
         {
             // https://metanit.com/sharp/tutorial/16.3.php
+            //https://stackoverflow.com/questions/11330643/serialize-property-as-xml-attribute-in-element
 
             XmlDocument xmlDoc = new XmlDocument();
 
@@ -112,12 +98,17 @@ namespace GenDomainXML
 
         public static void genLocalNetXML2()
         {
-            var model = new SomeModel
+            var model = new NetClass.localNet
             {
-                parametrString = new NetEnterPortElement { Value = "local" }
+                name = new NetClass._Name { name = "local" },
             };
             var serializer = new XmlSerializer(model.GetType());
-            serializer.Serialize(Console.Out, model);
+            FileStream fs = new FileStream("net.xml", FileMode.OpenOrCreate); //определяем файл 
+            var ns = new XmlSerializerNamespaces();
+            ns.Add(string.Empty, string.Empty);
+            serializer.Serialize(fs, model,ns);
+            //serializer.Serialize(Console.Out, model,ns);
+
         }
     }
 }
