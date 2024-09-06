@@ -13,9 +13,11 @@ namespace GenDomainXML
         {
             [XmlAttribute]
             public string name { get; set; }
+            //public string NetEnterPort { get; set; }
+            //public string ParentAgentPort { get; set; }
         }
 
-        public class _NetEnterPort
+       public class _NetEnterPort
         {
             [XmlAttribute]
             public string NetEnterPort { get; set; }
@@ -31,6 +33,10 @@ namespace GenDomainXML
         {
             [XmlElement("Alpha.Net.Agent")]
             public _Name name { get; set; }
+            //public _Name NetEnterPort { get; set; }
+            //public _Name ParentAgentPort { get; set; }
+            public _NetEnterPort NetEnterPort { get; set; }
+            //public _ParentAgentPort ParentAgentPort { get; set; }
         }
 
 

@@ -100,7 +100,13 @@ namespace GenDomainXML
         {
             var model = new NetClass.localNet
             {
-                name = new NetClass._Name { name = "local" },
+                name = new NetClass._Name { name = "local"},
+                NetEnterPort = new NetClass._NetEnterPort { NetEnterPort = "1020" }
+                //name = new NetClass._Name { name = "local", NetEnterPort = "1010" }
+                //NetEnterPort = new NetClass._Name { NetEnterPort = "1010" },
+                //ParentAgentPort = new NetClass._Name { ParentAgentPort = "1020" }
+                //NetEnterPort = new NetClass._NetEnterPort { NetEnterPort = "1010" },
+                //ParentAgentPort = new NetClass._ParentAgentPort { ParentAgentPort = "1020" }
             };
             var serializer = new XmlSerializer(model.GetType());
             FileStream fs = new FileStream("net.xml", FileMode.OpenOrCreate); //определяем файл 
