@@ -13,7 +13,7 @@ namespace GenDomainXML
 {
     internal class XMLFunc
     {
-        public static void genLocalNetXML(string _localName) //XmlNode _dataIn
+        /*public static void genLocalNetXML(string _localName) //XmlNode _dataIn
         {
             // https://metanit.com/sharp/tutorial/16.3.php
             //https://stackoverflow.com/questions/11330643/serialize-property-as-xml-attribute-in-element
@@ -94,25 +94,24 @@ namespace GenDomainXML
             xmlDoc.AppendChild(root);
 
             xmlDoc.Save("domain.xml");
-        }
+        }*/
 
         public static void genLocalNetXML2()
         {
-            var model = new NetClass.localNet
+            var model = new localNet
             {
-                name = new NetClass._Name { name = "local"},
-                NetEnterPort = new NetClass._NetEnterPort { NetEnterPort = "1020" }
-                //name = new NetClass._Name { name = "local", NetEnterPort = "1010" }
-                //NetEnterPort = new NetClass._Name { NetEnterPort = "1010" },
-                //ParentAgentPort = new NetClass._Name { ParentAgentPort = "1020" }
-                //NetEnterPort = new NetClass._NetEnterPort { NetEnterPort = "1010" },
-                //ParentAgentPort = new NetClass._ParentAgentPort { ParentAgentPort = "1020" }
+                name = "local", 
+                NetEnterPort = "1010",
+                ParentAgentPort = "1020"
             };
+
+            FileInfo File = new FileInfo("net.xml");
+            File.Delete();
             var serializer = new XmlSerializer(model.GetType());
             FileStream fs = new FileStream("net.xml", FileMode.OpenOrCreate); //определяем файл 
             var ns = new XmlSerializerNamespaces();
             ns.Add(string.Empty, string.Empty);
-            serializer.Serialize(fs, model,ns);
+            serializer.Serialize(fs, model, ns);
             //serializer.Serialize(Console.Out, model,ns);
 
         }
