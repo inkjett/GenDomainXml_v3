@@ -7,6 +7,14 @@ using System.Xml.Serialization;
 
 namespace GenDomainXML
 {
+
+    public class Options
+    {
+        [XmlAttribute]
+        public string LoggerLevel { get; set; }
+    }
+
+
     [XmlRoot("Alpha.Net.Agent")]
     public class localNet
     {
@@ -16,7 +24,8 @@ namespace GenDomainXML
         public string NetEnterPort { get; set; }
         [XmlAttribute]
         public string ParentAgentPort {get; set;}
-        [XmlAttribute("Options")] 
-        public string LoggerLevel { get; set; }
+
+        [XmlElement("Options")]
+        public Options LoggerLevel { get; set; }
     }
 }

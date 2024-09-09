@@ -104,22 +104,16 @@ namespace GenDomainXML
                 name = "local", 
                 NetEnterPort = "1010",
                 ParentAgentPort = "1020",
-                LoggerLevel = "2"
+                LoggerLevel = new Options { LoggerLevel = "2"}
             };
 
-            FileInfo File = new FileInfo("net.xml");
-            File.Delete();
-            var serializer = new XmlSerializer(model.GetType());
+            FileInfo File = new FileInfo("net.xml"); 
+            File.Delete(); // удаляем предыдущий файл 
+            var serializer = new XmlSerializer(model.GetType()); // сериализуем 
             FileStream fs = new FileStream("net.xml", FileMode.OpenOrCreate); //определяем файл 
             var ns = new XmlSerializerNamespaces();
-            ns.Add(string.Empty, string.Empty);
-            //XmlWriterSettings settings = new XmlWriterSettings() { Indent = true };
-            //XmlWriter writer = XmlWriter.Create("net.xml", settings);
-
-
+            ns.Add(string.Empty, string.Empty); // убираем первую строку с описанием
             serializer.Serialize(fs, model, ns);
-            //serializer.Serialize(Console.Out, model,ns);
-
         }
     }
 }
