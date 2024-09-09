@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
@@ -102,7 +103,8 @@ namespace GenDomainXML
             {
                 name = "local", 
                 NetEnterPort = "1010",
-                ParentAgentPort = "1020"
+                ParentAgentPort = "1020",
+                LoggerLevel = "2"
             };
 
             FileInfo File = new FileInfo("net.xml");
@@ -111,6 +113,10 @@ namespace GenDomainXML
             FileStream fs = new FileStream("net.xml", FileMode.OpenOrCreate); //определяем файл 
             var ns = new XmlSerializerNamespaces();
             ns.Add(string.Empty, string.Empty);
+            //XmlWriterSettings settings = new XmlWriterSettings() { Indent = true };
+            //XmlWriter writer = XmlWriter.Create("net.xml", settings);
+
+
             serializer.Serialize(fs, model, ns);
             //serializer.Serialize(Console.Out, model,ns);
 

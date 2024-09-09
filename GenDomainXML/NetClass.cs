@@ -12,7 +12,11 @@ namespace GenDomainXML
     {
         [XmlAttribute]
         public string name { get; set; }
+        [XmlAttribute]
         public string NetEnterPort { get; set; }
-        public string ParentAgentPort {get; set;} 
+        [XmlAttribute]
+        public string ParentAgentPort {get; set;}
+        [XmlAttribute("Options")] 
+        public string LoggerLevel { get; set; }
     }
 }
