@@ -10,12 +10,23 @@ using System.Xml;
 
 namespace GenDomainXML
 {
-
     public class Options
     {
         [XmlAttribute]
         public string LoggerLevel { get; set; }
     }
+
+    public class EntryPointNetAgent
+    {
+        [XmlAttribute]
+        public string Name { get; set; }
+        [XmlAttribute]
+        public string Address { get; set; }
+        [XmlAttribute]
+        public string Port { get; set; }
+    }
+
+
 
     [XmlRoot("Alpha.Net.Agent")]
     public class localNet
@@ -51,4 +62,14 @@ namespace GenDomainXML
         [XmlElement("Options")]
         public Options LoggerLevel { get; set; }               
     }
+
+    [XmlRoot("Alpha.Domain.Agent")]
+    public class localDomain
+    {
+        [XmlAttribute("EntryPointNetAgent")]
+        public EntryPointNetAgent qwert { get; set; }
+
+    }
+
+
 }

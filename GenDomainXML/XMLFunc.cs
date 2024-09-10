@@ -16,7 +16,7 @@ namespace GenDomainXML
     {
         public static void genLocalNetXML(string _localName)
         {
-            var model = new localNet
+            var Net = new localNet
             {
                 name = _localName, 
                 NetEnterPort = "1010",
@@ -24,13 +24,40 @@ namespace GenDomainXML
                 LoggerLevel = new Options { LoggerLevel = "2"}
             };
 
-            FileInfo File = new FileInfo("net.xml"); 
-            File.Delete(); // удаляем предыдущий файл 
-            var serializer = new XmlSerializer(model.GetType()); // сериализуем 
-            FileStream fs = new FileStream("net.xml", FileMode.OpenOrCreate); //определяем файл 
-            var ns = new XmlSerializerNamespaces();
-            ns.Add(string.Empty, string.Empty); // убираем первую строку с описанием
-            serializer.Serialize(fs, model, ns);
+            FileInfo FileNet = new FileInfo("net.xml");
+            if (FileNet.Exists)
+            {
+                FileNet.Delete(); // удаляем предыдущий файл 
+            }
+            var serializerNet = new XmlSerializer(Net.GetType()); // сериализуем 
+            FileStream fsNet = new FileStream("net.xml", FileMode.OpenOrCreate); //определяем файл 
+            var nsNet = new XmlSerializerNamespaces();
+            nsNet.Add(string.Empty, string.Empty); // убираем первую строку с описанием
+            serializerNet.Serialize(fsNet, Net, nsNet);
+
+            var Domain = new localDomain
+            {
+                qwert = new EntryPointNetAgent {
+
+                    Name = "local",
+                    Address = "127.0.0.1",
+                    Port = "1010"
+                }
+
+            };
+            FileInfo FileDomain = new FileInfo("domain.xml");
+            if (FileDomain.Exists)
+            {
+                FileDomain.Delete(); // удаляем предыдущий файл 
+            }
+            
+            var serializerDomain = new XmlSerializer(Domain.GetType()); // сериализуем 
+            FileStream fsDomain = new FileStream("domain.xml", FileMode.OpenOrCreate); //определяем файл 
+            var nsDomain = new XmlSerializerNamespaces();
+            nsDomain.Add(string.Empty, string.Empty); // убираем первую строку с описанием
+            serializerDomain.Serialize(fsDomain, Domain, nsDomain);
+
+
         }
     }
 }
