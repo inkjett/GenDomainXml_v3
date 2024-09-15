@@ -66,9 +66,7 @@ namespace GenDomainXML
     public class localDomain
     {
         [XmlElement("EntryPointNetAgent")]
-        public EntryPointNetAgent Name { get; set; }
-        public EntryPointNetAgent Address { get; set; }
-        public EntryPointNetAgent Port { get; set; }
+        public EntryPointNetAgent EntryPointNetAgent { get; set; }
 
     }
 

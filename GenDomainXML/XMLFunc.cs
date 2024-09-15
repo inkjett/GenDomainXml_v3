@@ -18,9 +18,12 @@ namespace GenDomainXML
         {
             var Domain = new localDomain
             {
-               Name = new EntryPointNetAgent {new Name =  "local" },
-               //Address = new EntryPointNetAgent { Address = "127.0.0.1" },
-               //Port = new EntryPointNetAgent { Port = "1010" }
+                EntryPointNetAgent = new EntryPointNetAgent 
+                { 
+                    Name = "local",
+                    Address = "127.0.0.1",
+                    Port = "1010"
+                }               
             };
 
             FileInfo FileDomain = new FileInfo("domain.xml");
