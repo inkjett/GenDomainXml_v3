@@ -51,6 +51,7 @@ namespace GenDomainXML
         public Options LoggerLevel { get; set; }               
     }
 
+    //domain
     public class EntryPointNetAgent
     {
         [XmlAttribute]
@@ -61,12 +62,33 @@ namespace GenDomainXML
         public string Port { get; set; }
     }
 
+    public class AlphaServer
+    {
+        [XmlAnyAttribute]
+        public string Name { get; set; }
+        [XmlAnyAttribute]
+        public string ServiceName { get; set; }
+    }
+
+    public class InstalledComponents
+    {
+        //[XmlElement("Alpha.Server")]
+        [XmlAnyAttribute]
+        public AlphaServer AlphaServer { get; set; }
+
+    }
+
+
+
+
 
     [XmlRoot("Alpha.Domain.Agent")]
     public class localDomain
     {
         [XmlElement("EntryPointNetAgent")]
         public EntryPointNetAgent EntryPointNetAgent { get; set; }
+        [XmlElement("InstalledComponents")]
+        public InstalledComponents InstalledComponents { get; set; }
 
     }
 

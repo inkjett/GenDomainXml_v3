@@ -23,9 +23,17 @@ namespace GenDomainXML
                     Name = "local",
                     Address = "127.0.0.1",
                     Port = "1010"
-                }               
+                },
+                InstalledComponents = new InstalledComponents
+                {
+                   AlphaServer = new AlphaServer 
+                   {
+                    Name = "MainServer",
+                    ServiceName = "Alpha.Server"
+                   }                
+                }
             };
-
+            
             FileInfo FileDomain = new FileInfo("domain.xml");
             if (FileDomain.Exists)
             {
