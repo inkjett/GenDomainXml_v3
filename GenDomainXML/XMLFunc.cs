@@ -18,6 +18,7 @@ namespace GenDomainXML
     {
         public static void genLocalDomainXml(string _localName) // генерация Локальной XML для Domain
         {
+
             var Domain = new localDomain {
                 EntryPointNetAgent = new EntryPointNetAgent { 
                     Name = _localName,
@@ -47,7 +48,7 @@ namespace GenDomainXML
                 FileDomain.Delete(); // удаляем предыдущий файл 
             }
             var serializerDomain = new XmlSerializer(Domain.GetType()); // сериализуем 
-            FileStream fsDomain = new FileStream("domain.xml", FileMode.OpenOrCreate); //определяем файл 
+            FileStream fsDomain = new FileStream("alpha.domain.agent.xml", FileMode.OpenOrCreate); //определяем файл 
             var nsDomain = new XmlSerializerNamespaces();
             nsDomain.Add(string.Empty, string.Empty); // убираем первую строку с описанием
             serializerDomain.Serialize(fsDomain, Domain, nsDomain);
@@ -63,7 +64,7 @@ namespace GenDomainXML
                 LoggerLevel = new Options { LoggerLevel = "2"}
             };
 
-            FileInfo FileNet = new FileInfo("net.xml");
+            FileInfo FileNet = new FileInfo("alpha.net.agent.xml");
             if (FileNet.Exists)
             {
                 FileNet.Delete(); // удаляем предыдущий файл 

@@ -65,11 +65,15 @@ namespace GenDomainXML
             }
             return tmp2;
         }
-        public static void GetParam()
+        public static string GetParam(XmlNode _dataIn, string _NameOfChildXML)
         {
-
-
-
+            foreach (XmlElement _dataInChild in _dataIn) //подстановка цифр в выбор
+            {
+                if (_dataInChild.Name == _NameOfChildXML) {
+                   return _dataInChild.GetAttribute("name");
+                }
+            }
+            return "";
         }
 
 

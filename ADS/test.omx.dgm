@@ -37,4 +37,40 @@
     <ethernet-adapter Id="49a20631-ccc7-4481-beac-876a1fd79b03" Left="10" Top="280.020687599182" Width="137.993333333333" Height="55.63" />
     <io-server Id="7dcd3ea1-9df0-4fd0-97e9-e9b7d1781703" Left="30" Top="30" Width="94.7133333333333" Height="152" />
   </domain-node>
+  <io-server Id="a61211ec-c4af-4c68-8cfd-3f93353e535d" OffsetX="0" OffsetY="0" Scale="1" SnapToGrid="false">
+    <opcda-server Id="fd9903b2-918d-4bff-8dc0-10805affe5ab" Left="1139.46" Top="26" Width="109.54" Height="36.63" />
+    <opcaeserver-module Id="4cc0fbaa-0a4e-4c34-92d8-75d9d02e699f" Left="1139.96333333333" Top="102.63" Width="109.036666666667" Height="36.63" />
+    <hda-server Id="db600ec7-b5b4-4246-bc7d-8bebc007fbf3" Left="1132.27" Top="179.26" Width="116.73" Height="36.63" />
+    <opcua-module Id="4b71dfe8-14ab-49a7-9e79-3041a0aaff69" Left="1139.63" Top="255.89" Width="109.37" Height="36.63" />
+    <tcp-server Id="4498f804-8b1c-4e06-9eda-501d8113ec72" Left="1124.26666666667" Top="332.52" Width="124.733333333333" Height="99.63" />
+    <history-module Id="1853cbc6-915b-480d-985d-55a745879d70" Left="66" Top="294.228962638855" Width="152.443333333333" Height="99.63" />
+    <application-object Id="aa4cd314-ac05-47ca-a041-5e6ec88eda06" Left="602" Top="93" Width="150" Height="100" />
+  </io-server>
+  <application-object Id="aa4cd314-ac05-47ca-a041-5e6ec88eda06" OffsetX="0" OffsetY="0" Scale="1" SnapToGrid="false">
+    <parameter Id="29db0fe0-15fe-4ee2-b0c1-649f018228cb" Left="242" Top="26" Width="103.826666666667" Height="22" />
+  </application-object>
+  <io-server Id="7dcd3ea1-9df0-4fd0-97e9-e9b7d1781703" OffsetX="0" OffsetY="0" Scale="1" SnapToGrid="false">
+    <opcda-server Id="07d5c74c-41ed-4c52-a65a-35ec60a18198" Left="1139.46" Top="26" Width="109.54" Height="36.63" />
+    <opcaeserver-module Id="1137f6bd-6c00-4b87-b737-fcca491def7e" Left="1139.96333333333" Top="102.63" Width="109.036666666667" Height="36.63" />
+    <hda-server Id="e855483d-2313-40aa-9480-8061f90ca07b" Left="1132.27" Top="179.26" Width="116.73" Height="36.63" />
+    <opcua-module Id="16105d8f-6a3f-4ff7-b83d-256ffb640af1" Left="1139.63" Top="255.89" Width="109.37" Height="36.63" />
+    <tcp-server Id="48cbe2f2-5f3c-48ed-8834-7197a6b8ae2b" Left="1124.26666666667" Top="332.52" Width="124.733333333333" Height="99.63" />
+    <history-module Id="d9a3ce9f-29ee-4cd5-802a-d93bb344bc44" Left="66" Top="294.228962638855" Width="152.443333333333" Height="99.63" />
+    <application-object Id="5a587081-7eb2-4eb5-a185-244e9893275b" Left="622" Top="113" Width="150" Height="100" />
+  </io-server>
+  <application-object Id="5a587081-7eb2-4eb5-a185-244e9893275b" OffsetX="0" OffsetY="0" Scale="1" SnapToGrid="false">
+    <parameter Id="787689b6-fe23-4d59-bd6f-fc98bb7bb6bb" Left="66" Top="26" Width="74.71" Height="22" />
+  </application-object>
+  <io-server Id="ed0d451a-78a6-4d62-b6a4-568d9fcdaf89" OffsetX="0" OffsetY="40.6041375198364" Scale="1" SnapToGrid="false">
+    <opcda-server Id="10cd6024-bc84-4100-b3fb-d6ab11d95516" Left="1144.46" Top="26" Width="109.54" Height="36.63" />
+    <opcaeserver-module Id="9513111b-0ed6-412b-b2f4-4502718eadbc" Left="1144.96333333333" Top="102.63" Width="109.036666666667" Height="36.63" />
+    <hda-server Id="70562674-c5c9-495b-a82f-09a96a860e2e" Left="1137.27" Top="179.26" Width="116.73" Height="36.63" />
+    <opcua-module Id="374ccaf4-e7d3-4151-9cfb-02e987c2acd1" Left="1144.63" Top="255.89" Width="109.37" Height="36.63" />
+    <tcp-server Id="37653e53-e312-4a30-9208-81cb704d853e" Left="1129.26666666667" Top="332.52" Width="124.733333333333" Height="99.63" />
+    <history-module Id="47aface0-0f39-4bd1-a45e-1978c6111d51" Left="66" Top="294.228962638855" Width="152.443333333333" Height="99.63" />
+    <application-object Id="d0c01c9d-e2b1-4bfb-98fe-d8c3ccb85830" Left="642" Top="133" Width="150" Height="100" />
+  </io-server>
+  <application-object Id="d0c01c9d-e2b1-4bfb-98fe-d8c3ccb85830" OffsetX="0" OffsetY="0" Scale="1" SnapToGrid="false">
+    <parameter Id="20c97a99-5173-4f93-8f80-4d977e92e224" Left="66" Top="26" Width="81.18" Height="22" />
+  </application-object>
 </Diagrams>

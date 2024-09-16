@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<omx xmlns="system" migration="29" xmlns:dp="automation.deployment" xmlns:eth="automation.ethernet" xmlns:srv="server">
+<omx xmlns="system" migration="29" xmlns:dp="automation.deployment" xmlns:eth="automation.ethernet" xmlns:srv="server" xmlns:ct="automation.control">
   <link-unit name="System" uuid="eb785acf-a90f-44ac-ab32-a4a662cd9cdd" target="Om.System" />
   <link-unit name="Server" uuid="2c47c631-493c-4e39-b370-05721d3ed066" target="Om.Server" />
   <link-unit name="PLC" uuid="cf1e0b5d-4af2-4bcd-b14d-603630350962" target="Om.PLC" />
@@ -13,10 +13,13 @@
         <srv:opcua-module name="UaServer" uuid="4b71dfe8-14ab-49a7-9e79-3041a0aaff69" />
         <srv:tcp-server name="TcpServer" uuid="4498f804-8b1c-4e06-9eda-501d8113ec72" />
         <srv:history-module name="HistoryModule" uuid="1853cbc6-915b-480d-985d-55a745879d70" />
+        <dp:application-object name="Application" uuid="aa4cd314-ac05-47ca-a041-5e6ec88eda06">
+          <ct:parameter name="Host" uuid="29db0fe0-15fe-4ee2-b0c1-649f018228cb" type="string" />
+        </dp:application-object>
       </srv:io-server>
     </dp:domain-node>
     <eth:ethernet-net name="Ethernet" uuid="ac300462-fce5-429a-873b-9805a6a7f760" />
-    <dp:domain-node name="host1" uuid="f3033fbe-2104-4cf2-9c51-896b64739758">
+    <dp:domain-node name="host1" uuid="f3033fbe-2104-4cf2-9c51-896b64739758" address="host1">
       <eth:ethernet-adapter name="EthernetAdapter" address="127.0.0.1" network="Ethernet" uuid="49a20631-ccc7-4481-beac-876a1fd79b03" />
       <srv:io-server name="Server1" uuid="7dcd3ea1-9df0-4fd0-97e9-e9b7d1781703">
         <srv:opcda-server name="DaServer" uuid="07d5c74c-41ed-4c52-a65a-35ec60a18198" />
@@ -25,11 +28,14 @@
         <srv:opcua-module name="UaServer" uuid="16105d8f-6a3f-4ff7-b83d-256ffb640af1" />
         <srv:tcp-server name="TcpServer" uuid="48cbe2f2-5f3c-48ed-8834-7197a6b8ae2b" />
         <srv:history-module name="HistoryModule" uuid="d9a3ce9f-29ee-4cd5-802a-d93bb344bc44" />
+        <dp:application-object name="Application" uuid="5a587081-7eb2-4eb5-a185-244e9893275b">
+          <ct:parameter name="Host1" type="string" uuid="787689b6-fe23-4d59-bd6f-fc98bb7bb6bb" />
+        </dp:application-object>
       </srv:io-server>
     </dp:domain-node>
   </dp:domain>
   <dp:domain name="Domain1" address="local" uuid="505e4b52-f676-449d-b6dc-c026d901849d">
-    <dp:domain-node name="host3" uuid="59fbf0ae-2893-414e-b961-512e606b8ae6">
+    <dp:domain-node name="host3" uuid="59fbf0ae-2893-414e-b961-512e606b8ae6" address="host3">
       <eth:ethernet-adapter name="EthernetAdapter" address="127.0.0.1" network="Ethernet" uuid="3ecf585c-77f0-41b0-8de2-16771b74350a" />
       <srv:io-server name="Server" uuid="ed0d451a-78a6-4d62-b6a4-568d9fcdaf89">
         <srv:opcda-server name="DaServer" uuid="10cd6024-bc84-4100-b3fb-d6ab11d95516" />
@@ -38,10 +44,13 @@
         <srv:opcua-module name="UaServer" uuid="374ccaf4-e7d3-4151-9cfb-02e987c2acd1" />
         <srv:tcp-server name="TcpServer" uuid="37653e53-e312-4a30-9208-81cb704d853e" />
         <srv:history-module name="HistoryModule" uuid="47aface0-0f39-4bd1-a45e-1978c6111d51" />
+        <dp:application-object name="Application" uuid="d0c01c9d-e2b1-4bfb-98fe-d8c3ccb85830">
+          <ct:parameter name="Host3" type="string" uuid="20c97a99-5173-4f93-8f80-4d977e92e224" />
+        </dp:application-object>
       </srv:io-server>
     </dp:domain-node>
     <eth:ethernet-net name="Ethernet" uuid="0031f6bd-3582-4ac5-baa0-29c5df456995" />
-    <dp:domain-node name="host2" uuid="9889833e-2062-4ff8-903c-8539bdbc4607">
+    <dp:domain-node name="host2" uuid="9889833e-2062-4ff8-903c-8539bdbc4607" address="host2">
       <eth:ethernet-adapter name="EthernetAdapter" address="127.0.0.1" network="Ethernet" uuid="f9ba9ae8-3a84-49ed-a989-8183950066b6" />
     </dp:domain-node>
   </dp:domain>

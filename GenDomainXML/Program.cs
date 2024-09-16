@@ -36,13 +36,15 @@ if (local)
 {
     int firstlevel= DataFunc.SelectElement("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
     int secondlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain.node:", xROOT.ChildNodes[firstlevel], "dp:domain-node");
-    //Console.WriteLine(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].ChildNodes[1].Attributes.GetNamedItem("name").Value);
-    //XMLFunc.genLocalNetXML(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].Attributes.GetNamedItem("name").Value); // генерация 
-    //XMLFunc.genLocalDomainXml(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].Attributes.GetNamedItem("name").Value);
-    
-    //проба вывести значение черз одну строку
-    //Console.WriteLine(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].SelectSingleNode("srv:io-server").Attributes.GetNamedItem("name").Value);
-        //.Attributes["srv:io-server"].Value );
+    string alphaserverNmae = DataFunc.GetParam(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel], "srv:io-server");  
+
+    if (alphaserverNmae != "")
+    {
+        XMLFunc.genLocalNetXML(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].Attributes.GetNamedItem("name").Value); // генерация 
+        XMLFunc.genLocalDomainXml(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].Attributes.GetNamedItem("name").Value);
+        Console.WriteLine($"Для локального применения конфигурации {DataFunc.GetParam(xROOT.ChildNodes[firstlevel], "dp:domain-node")} необходимо изменить занчение в поле адрес на пустое значение.");
+    }
+    else { Console.WriteLine("Имя службы Alpha.Server пустое");}
 }
 else
 {
