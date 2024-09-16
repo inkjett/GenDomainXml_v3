@@ -8,7 +8,7 @@ using System.Xml.Linq;
 using System.Xml;
 
 
-namespace GenDomainXML
+namespace NetXMLTypes
 {
     public class Options
     {
@@ -51,39 +51,5 @@ namespace GenDomainXML
         public Options LoggerLevel { get; set; }               
     }
 
-    //domain
-    public class EntryPointNetAgent
-    {
-        [XmlAttribute]
-        public string Name { get; set; }
-        [XmlAttribute]
-        public string Address { get; set; }
-        [XmlAttribute]
-        public string Port { get; set; }
-    }
-
-    public class AlphaServer
-    {
-        [XmlAttribute]
-        public string Name { get; set; }
-        [XmlAttribute]
-        public string ServiceName { get; set; }
-    }
-
-    public class InstalledComponents
-    {
-        [XmlElement("Alpha.Server")]
-        public AlphaServer AlphaServer { get; set; }
-
-    }
-
-    [XmlRoot("Alpha.Domain.Agent")]
-    public class localDomain
-    {
-        [XmlElement("EntryPointNetAgent")]
-        public EntryPointNetAgent EntryPointNetAgent { get; set; }
-        [XmlElement("InstalledComponents")]
-        public InstalledComponents InstalledComponents { get; set; }
-
-    }
+ 
 }

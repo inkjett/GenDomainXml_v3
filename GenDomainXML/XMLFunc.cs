@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DomainXMLTypes;
+using NetXMLTypes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
