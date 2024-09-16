@@ -64,23 +64,18 @@ namespace GenDomainXML
 
     public class AlphaServer
     {
-        [XmlAnyAttribute]
+        [XmlAttribute]
         public string Name { get; set; }
-        [XmlAnyAttribute]
+        [XmlAttribute]
         public string ServiceName { get; set; }
     }
 
     public class InstalledComponents
     {
-        //[XmlElement("Alpha.Server")]
-        [XmlAnyAttribute]
+        [XmlElement("Alpha.Server")]
         public AlphaServer AlphaServer { get; set; }
 
     }
-
-
-
-
 
     [XmlRoot("Alpha.Domain.Agent")]
     public class localDomain
@@ -91,6 +86,4 @@ namespace GenDomainXML
         public InstalledComponents InstalledComponents { get; set; }
 
     }
-
-
 }

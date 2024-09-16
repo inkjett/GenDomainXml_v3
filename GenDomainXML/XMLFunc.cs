@@ -32,6 +32,7 @@ namespace GenDomainXML
                     ServiceName = "Alpha.Server"
                    }                
                 }
+
             };
             
             FileInfo FileDomain = new FileInfo("domain.xml");
@@ -66,8 +67,6 @@ namespace GenDomainXML
             var nsNet = new XmlSerializerNamespaces();
             nsNet.Add(string.Empty, string.Empty); // убираем первую строку с описанием
             serializerNet.Serialize(fsNet, Net, nsNet);
-
-
         }
     }
 }
