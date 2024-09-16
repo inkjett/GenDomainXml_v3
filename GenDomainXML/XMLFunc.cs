@@ -16,7 +16,7 @@ namespace GenDomainXML
 {
     internal class XMLFunc
     {
-        public static void genLocalDomainXml(string _localName)
+        public static void genLocalDomainXml(string _localName) // генерация Локальной XML для Domain
         {
             var Domain = new localDomain
             {
@@ -33,8 +33,19 @@ namespace GenDomainXML
                     Name = "MainServer",
                     ServiceName = "Alpha.Server"
                    }                
-                }
-
+                },
+                Server = new Server
+                {
+                    Components = new Components
+                    {
+                        Component = new Component
+                        {
+                            InstalledName = "MainServer",
+                            Name = "Server"
+                        }
+                    }
+                },
+                LoggerLevel = new Options { LoggerLevel = "2" }
             };
             
             FileInfo FileDomain = new FileInfo("domain.xml");
@@ -49,7 +60,7 @@ namespace GenDomainXML
             serializerDomain.Serialize(fsDomain, Domain, nsDomain);
         }
 
-        public static void genLocalNetXML(string _localName)
+        public static void genLocalNetXML(string _localName) // генерация Локальной xml для Net
         {
             var Net = new localNet
             {

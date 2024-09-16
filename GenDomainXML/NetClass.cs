@@ -49,7 +49,5 @@ namespace NetXMLTypes
 
         [XmlElement("Options")]
         public Options LoggerLevel { get; set; }               
-    }
-
- 
+    } 
 }
