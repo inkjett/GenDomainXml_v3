@@ -65,6 +65,14 @@ namespace GenDomainXML
             }
             return tmp2;
         }
+        public static void GetParam()
+        {
+
+
+
+        }
+
+
     }
 }
 

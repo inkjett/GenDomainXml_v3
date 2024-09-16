@@ -35,8 +35,6 @@ namespace DomainXMLTypes
         public AlphaServer AlphaServer { get; set; }
 
     }
-
-
     public class Component
     {
         [XmlAnyElement("Comment7")]
@@ -46,13 +44,11 @@ namespace DomainXMLTypes
         [XmlAttribute]
         public string Name { get; set; }
     }
-
     public class Components
     {
         [XmlElement("Component")]
         public Component Component { get; set; }
     }
-
     public class Server
     {
         [XmlAnyElement("Comment6")]

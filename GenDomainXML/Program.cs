@@ -34,11 +34,15 @@ switch (DataFunc.select_value(2, 2))
 
 if (local)
 {
-    //int firstlevel= DataFunc.SelectElement("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
-    //int secondlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain.node:", xROOT.ChildNodes[firstlevel], "dp:domain-node");
+    int firstlevel= DataFunc.SelectElement("Выберите домен Alpha.Domain:", xROOT, "dp:domain");
+    int secondlevel = DataFunc.SelectElement("Выберите домен Alpha.Domain.node:", xROOT.ChildNodes[firstlevel], "dp:domain-node");
+    //Console.WriteLine(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].ChildNodes[1].Attributes.GetNamedItem("name").Value);
     //XMLFunc.genLocalNetXML(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].Attributes.GetNamedItem("name").Value); // генерация 
-    XMLFunc.genLocalDomainXml("123");
-
+    //XMLFunc.genLocalDomainXml(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].Attributes.GetNamedItem("name").Value);
+    
+    //проба вывести значение черз одну строку
+    //Console.WriteLine(xROOT.ChildNodes[firstlevel].ChildNodes[secondlevel].SelectSingleNode("srv:io-server").Attributes.GetNamedItem("name").Value);
+        //.Attributes["srv:io-server"].Value );
 }
 else
 {

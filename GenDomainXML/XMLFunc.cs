@@ -18,28 +18,21 @@ namespace GenDomainXML
     {
         public static void genLocalDomainXml(string _localName) // генерация Локальной XML для Domain
         {
-            var Domain = new localDomain
-            {
-                EntryPointNetAgent = new EntryPointNetAgent 
-                { 
-                    Name = "local",
+            var Domain = new localDomain {
+                EntryPointNetAgent = new EntryPointNetAgent { 
+                    Name = _localName,
                     Address = "127.0.0.1",
                     Port = "1010"
                 },
-                InstalledComponents = new InstalledComponents
-                {
-                   AlphaServer = new AlphaServer 
-                   {
-                    Name = "MainServer",
-                    ServiceName = "Alpha.Server"
+                InstalledComponents = new InstalledComponents {
+                   AlphaServer = new AlphaServer {
+                        Name = "MainServer",
+                        ServiceName = "Alpha.Server"
                    }                
                 },
-                Server = new Server
-                {
-                    Components = new Components
-                    {
-                        Component = new Component
-                        {
+                Server = new Server {
+                    Components = new Components {
+                        Component = new Component {
                             InstalledName = "MainServer",
                             Name = "Server"
                         }
